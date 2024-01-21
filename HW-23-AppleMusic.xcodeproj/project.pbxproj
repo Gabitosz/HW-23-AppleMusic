@@ -32,6 +32,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		031A101F2B5D733F0015E88C /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0348E4C52B5C23C900855825 /* HW_23_AppleMusicApp.swift */,
+				0348E4C72B5C23C900855825 /* ContentView.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		031A10202B5D73470015E88C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0348E4C92B5C23CA00855825 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		0348E4B92B5C23C900855825 = {
 			isa = PBXGroup;
 			children = (
@@ -51,9 +68,8 @@
 		0348E4C42B5C23C900855825 /* HW-23-AppleMusic */ = {
 			isa = PBXGroup;
 			children = (
-				0348E4C52B5C23C900855825 /* HW_23_AppleMusicApp.swift */,
-				0348E4C72B5C23C900855825 /* ContentView.swift */,
-				0348E4C92B5C23CA00855825 /* Assets.xcassets */,
+				031A10202B5D73470015E88C /* Resources */,
+				031A101F2B5D733F0015E88C /* Sources */,
 				0348E4CB2B5C23CA00855825 /* Preview Content */,
 			);
 			path = "HW-23-AppleMusic";
