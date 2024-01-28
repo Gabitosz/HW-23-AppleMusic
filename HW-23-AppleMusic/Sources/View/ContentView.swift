@@ -10,10 +10,11 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-            TabBar()
+        TabBar()
             .tint(.red)
-        }
     }
+}
+
 #Preview {
     ContentView()
 }
