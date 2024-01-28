@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct MiniPlayer: View {
+    
     var body: some View {
         
         VStack {
+            
             HStack(spacing: 15) {
                 
                 Image("rihannaDiamonds")
@@ -49,12 +51,10 @@ struct MiniPlayer: View {
                 
                 BlurView()
                 Divider()
-                    
+                
             }
-        
         )
         .offset(y: -50)
-        
     }
 }
 

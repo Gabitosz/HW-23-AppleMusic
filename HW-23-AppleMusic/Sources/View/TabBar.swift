@@ -9,12 +9,12 @@ import SwiftUI
 
 struct TabBar: View {
     
+    @State var current = 0
+    
     init() {
         UITabBar.appearance().backgroundColor = UIColor(red: 247 / 255, green: 248 / 255, blue: 247 / 255, alpha: 1)
-       }
+    }
     
-    @State var current = 0
-
     var body: some View {
         
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom), content: {
@@ -22,10 +22,9 @@ struct TabBar: View {
             TabView(selection: $current,
                     content:  {
                 
-               LibraryView()
+                LibraryView()
                     .tag(0)
                     .tabItem {
-                        
                         Image(systemName: "play.square.stack.fill")
                         Text("Медиатека")
                     }
@@ -33,21 +32,19 @@ struct TabBar: View {
                 Text("Радио")
                     .tag(1)
                     .tabItem {
-                        
                         Image(systemName: "dot.radiowaves.left.and.right")
                         Text("Радио")
                     }
-    
+                
                 Text("Поиск")
                     .tag(2)
                     .tabItem {
-                        
                         Image(systemName: "magnifyingglass")
                         Text("Поиск")
                     }
             })
-        
-          MiniPlayer()
+            
+            MiniPlayer()
             
         })
     }
