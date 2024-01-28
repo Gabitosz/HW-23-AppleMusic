@@ -14,11 +14,8 @@ struct CategoryListView: View {
     var body: some View {
         
         VStack {
-            
             List($categoryData, editActions: .move) { $category in
-                
                 HStack {
-                    
                     CategoryRow(category: category)
                         .onTapGesture {
                             category.isSelected.toggle()

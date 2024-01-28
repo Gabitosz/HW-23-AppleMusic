@@ -18,24 +18,20 @@ struct TabBar: View {
     var body: some View {
         
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom), content: {
-            
             TabView(selection: $current,
                     content:  {
-                
                 LibraryView()
                     .tag(0)
                     .tabItem {
                         Image(systemName: "play.square.stack.fill")
                         Text("Медиатека")
                     }
-                
                 Text("Радио")
                     .tag(1)
                     .tabItem {
                         Image(systemName: "dot.radiowaves.left.and.right")
                         Text("Радио")
                     }
-                
                 Text("Поиск")
                     .tag(2)
                     .tabItem {
@@ -43,9 +39,7 @@ struct TabBar: View {
                         Text("Поиск")
                     }
             })
-            
             MiniPlayer()
-            
         })
     }
 }

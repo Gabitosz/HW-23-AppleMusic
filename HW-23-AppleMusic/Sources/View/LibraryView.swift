@@ -21,7 +21,6 @@ struct LibraryView: View {
                         .font(.system(size: 24))
                         .bold()
                         .padding(2)
-                    
                     Text("Здесь появится купленная Вами в \n \t\t iTunes Store музыка. ")
                         .foregroundStyle(.gray)
                         .toolbar {

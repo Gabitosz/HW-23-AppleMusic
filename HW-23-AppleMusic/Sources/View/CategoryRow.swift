@@ -13,17 +13,14 @@ struct CategoryRow: View {
     
     var body: some View {
         HStack(spacing: 20) {
-            
             category.circleBox
                 .resizable()
                 .frame(width: 18, height: 18)
                 .foregroundStyle(.red)
-            
             category.image
                 .resizable()
                 .frame(width: 22, height: 22)
                 .foregroundStyle(.red)
-            
             Text(category.name)
                 .font(.system(size: 19))
             
