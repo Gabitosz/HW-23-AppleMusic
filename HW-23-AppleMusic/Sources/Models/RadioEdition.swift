@@ -24,5 +24,7 @@ struct RadioEdition: Hashable {
 extension RadioEdition {
     
     static var data: [RadioEdition] = [RadioEdition(radioTitle: "Новый Выпуск", radioEditionTitle: "Музыкальный базар с Бастой", sloganTitle: "Новое шоу", imageName: "radio1"),
-    RadioEdition(radioTitle: "Избранная радиостанция", radioEditionTitle: "Популярное", sloganTitle: "То, что слушают прямо сейчас", imageName: "radio2")]
+    RadioEdition(radioTitle: "Избранная радиостанция", radioEditionTitle: "Популярное", sloganTitle: "То, что слушают прямо сейчас", imageName: "radio2"),
+    RadioEdition(radioTitle: "Избранная радиостанция", radioEditionTitle: "Хип - Хоп", sloganTitle: "Идеальные биты и рифмы.", imageName: "radio3")
+    ]
 }
