@@ -26,7 +26,7 @@ struct TabBar: View {
                         Image(systemName: "play.square.stack.fill")
                         Text("Медиатека")
                     }
-                Text("Радио")
+                RadioView()
                     .tag(1)
                     .tabItem {
                         Image(systemName: "dot.radiowaves.left.and.right")
