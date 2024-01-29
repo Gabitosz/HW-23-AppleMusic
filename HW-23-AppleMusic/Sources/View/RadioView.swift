@@ -16,30 +16,33 @@ struct RadioView: View {
     ]
     
     var body: some View {
-        ScrollView(.horizontal) {
-           
-            LazyHGrid(rows: rows, spacing: 25) {
-                ForEach(radioData, id: \.self) { radioEdition in
-                    RadioCell(radioEdition: radioEdition)
-                    
-                    
-                    
-//                    VStack {
-//                        ForEach(radioData, id: \.self) { radioEdition in
-//                            Text(radioEdition.radioTitle)
-//                        }
-//                    }
-//                    Rectangle()
-//                        .foregroundColor(.yellow)
-//                        .frame(width: 330)
-                  //  Text(radioData[index].radioTitle)
-                    
-//                    Image(radioData[index].imageName)
-//                        .resizable()
-//                        .frame(width: 330)
-                    
-                }
-            }.padding(30)
+        
+        NavigationView {
+            ScrollView(.horizontal) {
+                LazyHGrid(rows: rows, spacing: 25) {
+                    ForEach(radioData, id: \.self) { radioEdition in
+                        RadioCell(radioEdition: radioEdition)
+                        
+                        
+                        
+                        //                    VStack {
+                        //                        ForEach(radioData, id: \.self) { radioEdition in
+                        //                            Text(radioEdition.radioTitle)
+                        //                        }
+                        //                    }
+                        //                    Rectangle()
+                        //                        .foregroundColor(.yellow)
+                        //                        .frame(width: 330)
+                        //  Text(radioData[index].radioTitle)
+                        
+                        //                    Image(radioData[index].imageName)
+                        //                        .resizable()
+                        //                        .frame(width: 330)
+                        
+                    }
+                }.padding(30)
+            }.navigationTitle("Радио")
+            
         }
     }
 }

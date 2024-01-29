@@ -22,8 +22,9 @@ struct RadioCell: View {
                 .font(.subheadline)
             Image(radioEdition.imageName)
                 .resizable()
-                .frame(width: 320, height: 230)
+                .frame(width: 320, height: 220)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
+                
                 
         }
     }
