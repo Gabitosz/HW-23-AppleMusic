@@ -15,9 +15,13 @@
 		031A10302B6565F80015E88C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A102F2B6565F80015E88C /* Category.swift */; };
 		031A10322B6567420015E88C /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A10312B6567420015E88C /* CategoryRow.swift */; };
 		0348E4C62B5C23C900855825 /* HW_23_AppleMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0348E4C52B5C23C900855825 /* HW_23_AppleMusicApp.swift */; };
-		0348E4C82B5C23C900855825 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0348E4C72B5C23C900855825 /* ContentView.swift */; };
 		0348E4CA2B5C23CA00855825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0348E4C92B5C23CA00855825 /* Assets.xcassets */; };
 		0348E4CD2B5C23CA00855825 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0348E4CC2B5C23CA00855825 /* Preview Assets.xcassets */; };
+		03F713222B6827900013F6EF /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F713212B6827900013F6EF /* RadioView.swift */; };
+		03F713242B682E6D0013F6EF /* RadioEdition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F713232B682E6D0013F6EF /* RadioEdition.swift */; };
+		03F713262B6838B30013F6EF /* RadioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F713252B6838B30013F6EF /* RadioCell.swift */; };
+		03F713282B69718B0013F6EF /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F713272B69718B0013F6EF /* Station.swift */; };
+		03F7132C2B6975980013F6EF /* StationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F7132B2B6975980013F6EF /* StationCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,9 +34,13 @@
 		031A10312B6567420015E88C /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		0348E4C22B5C23C900855825 /* HW-23-AppleMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HW-23-AppleMusic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0348E4C52B5C23C900855825 /* HW_23_AppleMusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW_23_AppleMusicApp.swift; sourceTree = "<group>"; };
-		0348E4C72B5C23C900855825 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0348E4C92B5C23CA00855825 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0348E4CC2B5C23CA00855825 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		03F713212B6827900013F6EF /* RadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
+		03F713232B682E6D0013F6EF /* RadioEdition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioEdition.swift; sourceTree = "<group>"; };
+		03F713252B6838B30013F6EF /* RadioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioCell.swift; sourceTree = "<group>"; };
+		03F713272B69718B0013F6EF /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		03F7132B2B6975980013F6EF /* StationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +54,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03022A3B2B6EE18000DFF86F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				03F713252B6838B30013F6EF /* RadioCell.swift */,
+				03F7132B2B6975980013F6EF /* StationCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		03022A3C2B6EE1ED00DFF86F /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				031A10312B6567420015E88C /* CategoryRow.swift */,
+			);
+			path = Rows;
+			sourceTree = "<group>";
+		};
 		031A101F2B5D733F0015E88C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -66,14 +91,15 @@
 		031A10272B65417B0015E88C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				03022A3C2B6EE1ED00DFF86F /* Rows */,
+				03022A3B2B6EE18000DFF86F /* Cells */,
 				0348E4C52B5C23C900855825 /* HW_23_AppleMusicApp.swift */,
 				031A10232B5D7A3F0015E88C /* LibraryView.swift */,
-				0348E4C72B5C23C900855825 /* ContentView.swift */,
 				031A10252B62D8920015E88C /* BlurView.swift */,
 				031A10282B65418D0015E88C /* TabBar.swift */,
 				031A102A2B6546480015E88C /* MiniPlayer.swift */,
 				031A102C2B6557E90015E88C /* CategoryListView.swift */,
-				031A10312B6567420015E88C /* CategoryRow.swift */,
+				03F713212B6827900013F6EF /* RadioView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -82,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				031A102F2B6565F80015E88C /* Category.swift */,
+				03F713232B682E6D0013F6EF /* RadioEdition.swift */,
+				03F713272B69718B0013F6EF /* Station.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,10 +218,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0348E4C82B5C23C900855825 /* ContentView.swift in Sources */,
+				03F713242B682E6D0013F6EF /* RadioEdition.swift in Sources */,
+				03F713262B6838B30013F6EF /* RadioCell.swift in Sources */,
 				031A10262B62D8920015E88C /* BlurView.swift in Sources */,
+				03F7132C2B6975980013F6EF /* StationCell.swift in Sources */,
 				031A10242B5D7A3F0015E88C /* LibraryView.swift in Sources */,
+				03F713282B69718B0013F6EF /* Station.swift in Sources */,
 				031A102B2B6546480015E88C /* MiniPlayer.swift in Sources */,
+				03F713222B6827900013F6EF /* RadioView.swift in Sources */,
 				0348E4C62B5C23C900855825 /* HW_23_AppleMusicApp.swift in Sources */,
 				031A102D2B6557E90015E88C /* CategoryListView.swift in Sources */,
 				031A10292B65418D0015E88C /* TabBar.swift in Sources */,

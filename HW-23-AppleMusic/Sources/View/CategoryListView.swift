@@ -23,7 +23,11 @@ struct CategoryListView: View {
                 }.listSectionSeparator(.hidden, edges: .top)
             }
             .listStyle(PlainListStyle())
+            VStack {
+                Spacer(minLength: 70)
+            }
         }
+        
     }
 }
 

@@ -11,7 +11,8 @@ import SwiftUI
 struct HW_23_AppleMusicApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabBar()
+                .tint(.red)
         }
     }
 }
