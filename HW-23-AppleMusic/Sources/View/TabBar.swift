@@ -11,8 +11,10 @@ struct TabBar: View {
     
     @State var current = 0
     
+    
     init() {
-        UITabBar.appearance().backgroundColor = UIColor(red: 247 / 255, green: 248 / 255, blue: 247 / 255, alpha: 1)
+        //        UITabBar.appearance().backgroundColor = UIColor(red: 247 / 255, green: 248 / 255, blue: 247 / 255, alpha: 1)
+        
     }
     
     var body: some View {
@@ -32,7 +34,7 @@ struct TabBar: View {
                         Image(systemName: "dot.radiowaves.left.and.right")
                         Text("Радио")
                     }
-                Text("Поиск")
+                SearchView()
                     .tag(2)
                     .tabItem {
                         Image(systemName: "magnifyingglass")
