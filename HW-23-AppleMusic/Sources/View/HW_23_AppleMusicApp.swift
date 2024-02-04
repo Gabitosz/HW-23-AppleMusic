@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct HW_23_AppleMusicApp: App {
+  
     var body: some Scene {
         WindowGroup {
             TabBar()

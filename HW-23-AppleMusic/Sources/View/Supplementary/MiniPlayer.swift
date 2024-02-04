@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MiniPlayer: View {
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         
         VStack {
@@ -27,12 +29,12 @@ struct MiniPlayer: View {
                 Button (action: {} , label:  {
                     Image(systemName: "play.fill")
                         .font(.title2)
-                        .foregroundStyle(.black)
+                        .foregroundStyle(colorScheme == .dark ? .white : .black)
                 })
                 Button (action: {}, label: {
                     Image(systemName: "forward.fill")
                         .font(.title2)
-                        .foregroundStyle(.gray)
+                        .foregroundStyle(colorScheme == .dark ? .white : .gray)
                 })
             }
             .padding(.horizontal)
@@ -44,7 +46,7 @@ struct MiniPlayer: View {
                 Divider()
             }
         )
-        .offset(y: -50)
+        .offset(y: -45)
     }
 }
 
