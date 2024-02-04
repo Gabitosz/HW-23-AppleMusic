@@ -28,5 +28,5 @@ extension Station {
         Station(stationTitle: "The Heart Beat of Lagos", stationSubTitle: "Выдающиеся образцы Lagos", imageName: "station4"),
         Station(stationTitle: "Классика", stationSubTitle: "Выдающиеся образцы Los 40 classic", imageName: "station5"),
     ]
-
+    
 }
