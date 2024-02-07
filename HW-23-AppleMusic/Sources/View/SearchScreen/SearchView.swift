@@ -33,8 +33,11 @@ struct SearchView: View {
                         LazyVGrid(columns: columns, spacing: 10) {
                             ForEach(playlistCategoryData, id: \.self) { playListCategory in
                                 CategoryCell(playlistCategory: playListCategory)
+                                
                             }
+                            
                         }.padding(20)
+                            
                             .searchable(text: $searchText, prompt: "Ваша Медиатека")
                     }
                     
