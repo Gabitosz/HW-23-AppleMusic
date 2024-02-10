@@ -10,8 +10,10 @@ import SwiftUI
 struct CategoryCell: View {
     
     var playlistCategory: PlaylistCategory
+    @State private var isActive = false
     
     var body: some View {
+        
         VStack {
             Image(playlistCategory.imageName)
                 .resizable()
@@ -26,6 +28,15 @@ struct CategoryCell: View {
                         .padding(.leading, 10)
                     , alignment: .bottomLeading)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
+                .onTapGesture {
+                    self.isActive = true
+                }
+                .background(
+                    NavigationLink ( destination: CategoryDetailView(playlistCategory: playlistCategory), isActive: $isActive, label: {
+                        /*@START_MENU_TOKEN@*/Text("Link")/*@END_MENU_TOKEN@*/
+                        
+                    }))
+            
         }
     }
 }
