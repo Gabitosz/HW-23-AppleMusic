@@ -9,12 +9,41 @@ import SwiftUI
 
 struct CategoryDetailViewCell: View {
     
+    @State var detailPlaylist: DetailPlaylist
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack(alignment: .leading) {
+            VStack(alignment: .leading){
+                Text(detailPlaylist.playlistTitle)
+                    .font(.subheadline)
+                    .foregroundStyle(.gray)
+                
+                Text(detailPlaylist.playlistDescription)
+                    .font(.headline)
+                
+                Text(detailPlaylist.playlistSubTitle)
+                    .font(.subheadline)
+                    .foregroundStyle(.gray)
+                
+            }.padding(.bottom, 8)
+            
+            Image(detailPlaylist.imageName)
+                .resizable()
+                .frame(width: 320, height: 220)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .overlay(
+                    VStack(alignment: .leading) {
+                        Spacer()
+                        Text(detailPlaylist.playlistImageDescription)
+                            .font(.caption)
+                            .foregroundColor(.white)
+                            .bold()
+                            .padding(8)
+                    }
+                    , alignment: .bottomLeading)
+        }
     }
+    
 }
 
-#Preview {
-    CategoryDetailViewCell()
-}
