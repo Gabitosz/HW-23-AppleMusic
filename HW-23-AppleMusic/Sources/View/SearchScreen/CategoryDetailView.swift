@@ -10,50 +10,88 @@ import SwiftUI
 struct CategoryDetailView: View {
     
     var playlistCategory: PlaylistCategory
+    let playlistCategoryData = PlaylistCategory.data
+    @Environment(\.dismiss) private var dismiss
     
-    @Environment(\.dismiss) var dismiss
-
-//    var btnBack : some View { Button(action: {
-//        self.presentationMode.wrappedValue.dismiss()
-//        }) {
-//            HStack {
-//            Image("ic_back") // set image here
-//                .aspectRatio(contentMode: .fit)
-//                .foregroundColor(.white)
-//                Text("Go back")
-//            }
-//        }
-//    }
+    var rows = [
+        GridItem(.flexible())
+    ]
     
     var body: some View {
-        NavigationView {
-            VStack(alignment: .leading) {
-                VStack(alignment: .leading) {
-                    Text(playlistCategory.playlistTitle)
-                        .font(.subheadline)
+        let detailPlaylists = playlistCategory.detailPlaylists
+        
+        VStack {
+            ScrollView(.vertical) {
+                HStack {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        
+                        LazyHGrid(rows: rows, spacing: 10) {
+                            ForEach(detailPlaylists, id: \.self) { detailPlaylist in
+                                CategoryDetailViewCell(detailPlaylist:  detailPlaylist)
+                            }
+                        }
+                    }.padding(25)
+                        .padding(.top,-10)
+                        .padding(.bottom, -20)
                     
-                    Text(playlistCategory.playlistSubTitle)
-                        .font(.headline)
-                    
-                    Text(playlistCategory.playlistDescription)
-                        .font(.subheadline)
-                    
-                }.padding(.bottom, 8)
+                }
                 
-                Image(playlistCategory.imageName)
-                    .resizable()
-                    .frame(width: 320, height: 220)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-            }.navigationTitle(playlistCategory.playlistCategoryTitle)
-        }.navigationBarBackButtonHidden(true)
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button(action: {
-                        dismiss()
-                    }) {
-                        Image(systemName: "arrow.left")
+                HStack( content: {
+                    Text(playlistCategory.albumsTitle)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .font(.title2)
+                        .bold()
+                        .padding(.leading, 20)
+                        .padding(.bottom, -15)
+                    Text("См.все")
+                        .padding(.trailing, 20)
+                        .padding(.top, 20)
+                        .font(.subheadline)
+                        .foregroundStyle(.red)
+                }).padding(.bottom, -20)
+                
+                HStack {
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHGrid(rows: rows) {
+                            
+                            ForEach(playlistCategory.albumsImagesName, id: \.self) { images in
+                                HStack(){
+                                    Image(images)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 180, height: 180)
+                                        .clipShape(RoundedRectangle(cornerRadius: 5))
+                                }
+                            }
+                        }.padding(20)
                     }
-
+                }
+                VStack {
+                    Spacer(minLength: 90)
+                }
+            }
+            
+        }.navigationTitle(playlistCategory.playlistCategoryTitle)
+            .navigationBarBackButtonHidden()
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                    } label: {
+                        Image(systemName: "ellipsis.circle")
+                    }
+                }
+            }
+        
+            .toolbar() {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        HStack {
+                            Image(systemName: "chevron.left")
+                        }
+                    }
                 }
             }
     }
@@ -62,3 +100,4 @@ struct CategoryDetailView: View {
 #Preview {
     CategoryDetailView(playlistCategory: PlaylistCategory.data[0])
 }
+
