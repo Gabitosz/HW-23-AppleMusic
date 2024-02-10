@@ -37,7 +37,7 @@ struct SearchView: View {
                             }
                             
                         }.padding(20)
-                            
+                        
                             .searchable(text: $searchText, prompt: "Ваша Медиатека")
                     }
                     
