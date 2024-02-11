@@ -49,7 +49,6 @@ struct SearchView: View {
                             }
                             
                         }.padding(20)
-                        
                             .searchable(text: $searchText, prompt: "Ваша Медиатека")
                     }
                     
@@ -58,10 +57,17 @@ struct SearchView: View {
                     Spacer(minLength: 50)
                 }
             }.navigationTitle("Поиск")
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    endEditing()
+                }
         }.onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardDidShowNotification)) { _ in
-            
+                
         }
     }
+    private func endEditing() {
+       UIApplication.shared.endEditing()
+   }
 }
 
 #Preview {
