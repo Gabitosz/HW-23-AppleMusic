@@ -18,6 +18,18 @@ struct SearchView: View {
         GridItem(.adaptive(minimum: 100)),
     ]
     
+    var filteredPlaylistData: [PlaylistCategory] {
+        if searchText.isEmpty {
+            return playlistCategoryData
+        } else {
+            return playlistCategoryData.filter { playlistCategory in
+                playlistCategory.playlistCategoryTitle
+                    .prefix(searchText.count)
+                    .localizedCaseInsensitiveContains(searchText)
+            }
+        }
+    }
+    
     var body: some View {
         NavigationView {
             
@@ -31,7 +43,7 @@ struct SearchView: View {
                         .padding(.top, 10)
                     HStack {
                         LazyVGrid(columns: columns, spacing: 10) {
-                            ForEach(playlistCategoryData, id: \.self) { playListCategory in
+                            ForEach(filteredPlaylistData, id: \.self) { playListCategory in
                                 CategoryCell(playlistCategory: playListCategory)
                                 
                             }
@@ -46,6 +58,8 @@ struct SearchView: View {
                     Spacer(minLength: 50)
                 }
             }.navigationTitle("Поиск")
+        }.onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardDidShowNotification)) { _ in
+            
         }
     }
 }
