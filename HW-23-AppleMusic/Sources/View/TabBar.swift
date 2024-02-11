@@ -10,11 +10,28 @@ import SwiftUI
 struct TabBar: View {
     
     @State var current = 0
+    @State private var isKeyboardVisible = false
     
     
     init() {
         //        UITabBar.appearance().backgroundColor = UIColor(red: 247 / 255, green: 248 / 255, blue: 247 / 255, alpha: 1)
+        NotificationCenter.default.addObserver(
+            forName: UIResponder.keyboardWillShowNotification,
+            object: nil,
+            queue: .main) { [self] notification in
+                withAnimation {
+                    self.isKeyboardVisible = true
+                }
+            }
         
+        NotificationCenter.default.addObserver(
+            forName: UIResponder.keyboardWillHideNotification,
+            object: nil,
+            queue: .main) { [self] notification in
+                withAnimation {
+                    self.isKeyboardVisible = false
+                }
+            }
     }
     
     var body: some View {
@@ -41,11 +58,24 @@ struct TabBar: View {
                         Text("Поиск")
                     }
             })
-            MiniPlayer()
+            if !isKeyboardVisible {
+                MiniPlayer()
+            }
         })
+        .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { _ in
+            withAnimation {
+                self.isKeyboardVisible = true
+            }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
+            withAnimation {
+                self.isKeyboardVisible = false
+            }
+        }
     }
 }
 
 #Preview {
     TabBar()
 }
+
