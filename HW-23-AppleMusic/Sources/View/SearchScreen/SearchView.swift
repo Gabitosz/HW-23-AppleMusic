@@ -19,16 +19,16 @@ struct SearchView: View {
     ]
     
     var filteredPlaylistData: [PlaylistCategory] {
-           if searchText.isEmpty {
-               return playlistCategoryData
-           } else {
-               return playlistCategoryData.filter { playlistCategory in
-                   playlistCategory.playlistCategoryTitle
-                      // .localizedCaseInsensitiveContains(searchText)
-                       .localizedStandardContains(searchText)
-               }
-           }
-       }
+        if searchText.isEmpty {
+            return playlistCategoryData
+        } else {
+            return playlistCategoryData.filter { playlistCategory in
+                playlistCategory.playlistCategoryTitle
+                    .prefix(searchText.count)
+                    .localizedCaseInsensitiveContains(searchText)
+            }
+        }
+    }
     
     var body: some View {
         NavigationView {
