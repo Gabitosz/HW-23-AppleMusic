@@ -10,7 +10,7 @@ import SwiftUI
 struct TabBar: View {
     
     @State var current = 0
-    @State private var isKeyboardVisible = false
+    @State var isKeyboardVisible = false
     
     
     init() {
@@ -51,7 +51,7 @@ struct TabBar: View {
                         Image(systemName: "dot.radiowaves.left.and.right")
                         Text("Радио")
                     }
-                SearchView()
+                SearchView(isKeyboardVisible: $isKeyboardVisible)
                     .tag(2)
                     .tabItem {
                         Image(systemName: "magnifyingglass")
