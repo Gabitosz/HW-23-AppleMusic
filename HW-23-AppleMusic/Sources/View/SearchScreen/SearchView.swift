@@ -13,6 +13,8 @@ struct SearchView: View {
     
     @State private var playlistCategoryData = PlaylistCategory.data
     
+    @Binding var isKeyboardVisible: Bool
+    
     var columns = [
         GridItem(.adaptive(minimum: 100)),
         GridItem(.adaptive(minimum: 100)),
@@ -53,8 +55,11 @@ struct SearchView: View {
                     }
                     
                 }
-                VStack {
-                    Spacer(minLength: 50)
+
+                if !isKeyboardVisible  {
+                    VStack {
+                        Spacer(minLength: 50)
+                    }
                 }
             }.navigationTitle("Поиск")
                 .contentShape(Rectangle())
@@ -70,6 +75,6 @@ struct SearchView: View {
    }
 }
 
-#Preview {
-    SearchView()
-}
+//#Preview {
+//    SearchView()
+//}
