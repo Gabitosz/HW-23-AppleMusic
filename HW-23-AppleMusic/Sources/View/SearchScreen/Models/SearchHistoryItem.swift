@@ -6,3 +6,21 @@
 //
 
 import Foundation
+
+struct SearchHistoryItem: Identifiable, Codable {
+    var id = UUID()
+    var searchTerm: String
+}
+
+class SearchHistoryStore: ObservableObject {
+    @Published var searchHistory: [SearchHistoryItem] = [SearchHistoryItem(searchTerm: "Here")]
+
+    func addToHistory(searchTerm: String) {
+        let newItem = SearchHistoryItem(searchTerm: searchTerm)
+        searchHistory.append(newItem)
+    }
+
+    func clearHistory() {
+        searchHistory.removeAll()
+    }
+}
