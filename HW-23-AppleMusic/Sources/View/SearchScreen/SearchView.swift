@@ -42,17 +42,29 @@ struct SearchView: View {
                     if isKeyboardVisible {
                         if !searchHistoryStore.searchHistory.isEmpty {
                             VStack(alignment: .leading) {
-                                Text("История поиска")
-                                    .font(.title2)
-                                    .bold()
-                                    .padding(.leading, 20)
-                                    .padding(.bottom, 10)
+                                HStack {
+                                    Text("Недавние поиски")
+                                        .font(.system(size: 16))
+                                        .bold()
+                                        .padding(.leading, 20)
+                                        .padding(.bottom, 10)
+                                    Spacer()
+                                    Button("Очистить") {
+                                        searchHistoryStore.clearHistory()
+                                    }
+                                    .font(.system(size: 14))
+                                    .padding(.bottom, 7)
+                                    
+                                }
                                 
                                 ForEach(searchHistoryStore.searchHistory) { historyItem in
                                     Button(action: {
                                         searchText = historyItem.searchTerm
                                     }) {
+                                        Image(systemName: "magnifyingglass").resizable().frame(width: 15, height: 15).foregroundStyle(.white)
                                         Text(historyItem.searchTerm)
+                                            .foregroundStyle(.white)
+                                            .font(.system(size: 16))
                                             .padding()
                                             .background(Color.gray.opacity(0.2))
                                             .cornerRadius(10)

@@ -13,7 +13,7 @@ struct SearchHistoryItem: Identifiable, Codable {
 }
 
 class SearchHistoryStore: ObservableObject {
-    @Published var searchHistory: [SearchHistoryItem] = [SearchHistoryItem(searchTerm: "Here")]
+    @Published var searchHistory: [SearchHistoryItem] = []
 
     func addToHistory(searchTerm: String) {
         let newItem = SearchHistoryItem(searchTerm: searchTerm)
