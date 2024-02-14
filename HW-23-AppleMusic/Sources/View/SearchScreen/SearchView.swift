@@ -35,8 +35,8 @@ struct SearchView: View {
     }
     
     var body: some View {
+        
         NavigationView {
-            
             VStack() {
                 ScrollView(.vertical) {
                     if isKeyboardVisible {
@@ -54,7 +54,6 @@ struct SearchView: View {
                                     }
                                     .font(.system(size: 14))
                                     .padding(.bottom, 7)
-                                    
                                 }
                                 
                                 ForEach(searchHistoryStore.searchHistory) { historyItem in
@@ -71,7 +70,6 @@ struct SearchView: View {
                                     }
                                     .padding(.horizontal, 20)
                                 }
-                                
                                 Divider()
                             }
                             .padding(.top, 10)
@@ -81,7 +79,6 @@ struct SearchView: View {
                         LazyVGrid(columns: columns, spacing: 10) {
                             ForEach(filteredPlaylistData, id: \.self) { playListCategory in
                                 CategoryCell(playlistCategory: playListCategory)
-                                
                             }
                             
                         }.padding(20)
