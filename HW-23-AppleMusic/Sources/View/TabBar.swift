@@ -11,6 +11,8 @@ struct TabBar: View {
     
     @State var current = 0
     @State var isKeyboardVisible = false
+    @State var expand = false
+    @Namespace var animation
     
     
     init() {
@@ -59,7 +61,7 @@ struct TabBar: View {
                     }
             })
             if !isKeyboardVisible {
-                MiniPlayer()
+                MiniPlayer(animation: animation, expand: $expand)
             }
         })
         .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { _ in
