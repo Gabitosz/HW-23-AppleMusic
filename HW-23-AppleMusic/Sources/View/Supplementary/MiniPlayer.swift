@@ -158,6 +158,27 @@ struct MiniPlayer: View {
                         .foregroundStyle(.primary)
                 }
                 .padding()
+                HStack(spacing: 50) {
+                    
+                    Button(action: {}) {
+                        Image(systemName: "backward.fill")
+                            .font(.system(size: 25))
+                            .foregroundStyle(colorScheme == .dark ? .white : .black)
+                    }
+                    
+                    Button(action: {}) {
+                        Image(systemName: "play.fill")
+                            .font(.system(size: 45))
+                            .foregroundStyle(colorScheme == .dark ? .white : .black)
+                    }
+                    
+                    Button(action: {}) {
+                        Image(systemName: "forward.fill")
+                            .font(.system(size: 25))
+                            .foregroundStyle(colorScheme == .dark ? .white : .black)
+                    }
+                }.padding(.top, -30)
+                    .padding()
                 
                 Spacer(minLength: 0)
                 
