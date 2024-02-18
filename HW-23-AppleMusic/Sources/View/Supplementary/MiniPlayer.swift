@@ -11,11 +11,17 @@ struct MiniPlayer: View {
     
     var animation: Namespace.ID
     @Binding var expand: Bool
-    var height = UIScreen.main.bounds.height / 3
-    var safeArea = UIApplication.shared.windows.first?.safeAreaInsets
+    var height = UIScreen.main.bounds.height / 3.5
     @State var volume: CGFloat = 0
-    
+    @State var currentTime: Double = 0
     @Environment(\.colorScheme) var colorScheme
+    
+    var safeArea: UIEdgeInsets? {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
+            return nil
+        }
+        return windowScene.windows.first?.safeAreaInsets
+    }
     
     var body: some View {
         
