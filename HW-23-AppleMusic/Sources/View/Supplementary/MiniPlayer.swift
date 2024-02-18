@@ -116,6 +116,41 @@ struct MiniPlayer: View {
 //                }
                 
                 // Stop Button
+                    GeometryReader { geometry in
+                        ZStack(alignment: .leading) {
+                            ZStack(alignment: .leading) {
+                                RoundedRectangle(cornerRadius: 10)
+                                    .frame(width: geometry.size.width, height: 2)
+                                    .foregroundStyle(.gray).opacity(0.5)
+                            }
+                            ZStack {
+                                Circle()
+                                    .frame(width: 8, height: 8)
+                                    .foregroundStyle(colorScheme == .dark ? .white : .black)
+                                
+                                Circle().frame(width: 30, height: 30)
+                                    .foregroundStyle(.green).opacity(0.0001)
+                                
+                            }.offset(x: CGFloat(currentTime) * geometry.size.width - 10)
+                                .gesture(
+                                    DragGesture(minimumDistance: 0)
+                                        .onChanged{ gesture in
+                                            updateValue(with: gesture, in: geometry)
+                                        })
+                        }
+                    }.padding(.horizontal, 30)
+                    
+                    HStack {
+                        Text("0:00")
+                            .font(.caption2)
+                            .foregroundStyle(colorScheme == .dark ? .white : .black).opacity(0.3)
+                        Spacer()
+                        Text("-3:55")
+                            .font(.caption2)
+                            .foregroundStyle(colorScheme == .dark ? .white : .black).opacity(0.3)
+                    }.padding(30)
+                        .padding(.top, -10)
+                }.padding(.top, -25)
                 
                 Button(action: {}) {
                     Image(systemName: "stop.fill")
