@@ -23,20 +23,20 @@ struct MiniPlayer: View {
         return windowScene.windows.first?.safeAreaInsets
     }
     
+    
     var body: some View {
         
         VStack {
-            
-            
             Capsule()
                 .fill(Color.gray)
                 .frame(width: expand ?  60 : 0, height: expand ? 4 : 0)
                 .opacity(expand ? 1 : 0)
-                .padding(.top, expand ? safeArea?.top : 0)
                 .padding(.vertical, expand ? 30 : 0)
+                .padding(.top, expand ? 120 : 0)
+            
             
             HStack(spacing: 15) {
-                // centering image
+                
                 if expand { Spacer(minLength: 0)}
                 
                 Image("rihannaDiamonds")
@@ -44,6 +44,7 @@ struct MiniPlayer: View {
                     .aspectRatio(contentMode: .fill)
                     .frame(width: expand ? height : 55, height: expand ? height : 55)
                     .cornerRadius(15)
+                
                 
                 if !expand {
                     Text("Rihanna - Diamonds")
@@ -66,18 +67,18 @@ struct MiniPlayer: View {
                             .foregroundStyle(colorScheme == .dark ? .white : .gray)
                     })
                 }
-                }
-                
+            }
+            
             .padding(.horizontal)
             
             VStack(spacing: 15) {
                 
-               Spacer(minLength: 0)
+                Spacer(minLength: 0)
                 
                 HStack {
                     if expand {
                         VStack {
-                            Text ("Diamonds")
+                            Text("Diamonds")
                                 .font(.title3)
                                 .foregroundStyle(.primary)
                                 .fontWeight(.bold)
@@ -88,7 +89,7 @@ struct MiniPlayer: View {
                                 .foregroundStyle(.gray)
                                 .fontWeight(.bold)
                                 .matchedGeometryEffect(id: "Label", in: animation)
-                        }
+                        }.padding(.top, 10)
                     }
                     Spacer(minLength: 0)
                     
@@ -96,26 +97,12 @@ struct MiniPlayer: View {
                         Image(systemName: "ellipsis.circle.fill")
                             .font(.title2)
                             .foregroundStyle(.gray)
-                    }
+                    }.padding(.top, 10)
                 }
                 .padding()
                 .padding(.top, 20)
                 
                 VStack {
-                    Slider(value: $volume)
-                }.padding()
-                
-                
-//                HStack {
-//                    
-//                    Capsule()
-//                        .fill(
-//                            LinearGradient(gradient: .init(colors: [Color.white.opacity(0.7), Color.white.opacity()]), startPoint: <#T##UnitPoint#>, endPoint: <#T##UnitPoint#>)
-//                        )
-//                    
-//                }
-                
-                // Stop Button
                     GeometryReader { geometry in
                         ZStack(alignment: .leading) {
                             ZStack(alignment: .leading) {
@@ -152,12 +139,6 @@ struct MiniPlayer: View {
                         .padding(.top, -10)
                 }.padding(.top, -25)
                 
-                Button(action: {}) {
-                    Image(systemName: "stop.fill")
-                        .font(.largeTitle)
-                        .foregroundStyle(.primary)
-                }
-                .padding()
                 HStack(spacing: 50) {
                     
                     Button(action: {}) {
@@ -189,48 +170,61 @@ struct MiniPlayer: View {
                     Slider(value: $volume)
                     
                     Image(systemName: "speaker.wave.2.fill")
-                }
-                .padding()
+                }.padding(.bottom, 10)
+                    .padding()
                 
                 HStack(spacing: 90) {
                     
                     Button(action: {}) {
                         Image(systemName: "quote.bubble")
                             .font(.title2)
-                            .foregroundStyle(.white)
+                            .foregroundStyle(colorScheme == .dark ? .white : .black)
                     }
                     
                     Button(action: {}) {
                         Image(systemName: "airplayaudio")
                             .font(.title2)
-                            .foregroundStyle(.white)
+                            .foregroundStyle(colorScheme == .dark ? .white : .black)
                     }
                     
-                    
                     Button(action: {}) {
-                        Image(systemName: "list.bullet")
-                            .font(.title2)
-                            .foregroundStyle(.white)
+                        ZStack {
+                            Image(systemName: "list.bullet")
+                                .font(.title2)
+                                .foregroundStyle(colorScheme == .dark ? .white : .black)
+                            Image(systemName: "shuffle").padding(5)
+                                .background(Color.gray.opacity(0.9)).clipShape(Circle())
+                                .font(.system(size: 10))
+                                .foregroundStyle(colorScheme == .dark ? .white : .white)
+                                .padding(.bottom, 20)
+                                .padding(.leading, 20)
+                        }
                     }
                     
                 }.padding(.bottom, safeArea?.bottom == 0 ? 15 : safeArea?.bottom)
+                    .padding(.bottom, 250)
             }
             .frame(width: expand ? nil : 0, height: expand ? nil : 0)
             .opacity(expand ? 1 : 0)
-        }
-        // expanding when clicked
+        }.padding(.bottom, expand ? -110 : 0)
         
-        .frame(maxHeight: expand ? .infinity : 70)
-        .background(
-            VStack(spacing: 0) {
-                BlurView()
-                Divider()
-            }.onTapGesture(perform: {
-                withAnimation(.spring()) { expand.toggle() }
-            })
-        )
-        .ignoresSafeArea()
-        .offset(y: expand ? 0 : -45)
+            .frame(maxHeight: expand ? .infinity : 70)
+            .background(
+                VStack(spacing: 0) {
+                    BlurView()
+                    Divider()
+                }.onTapGesture(perform: {
+                    withAnimation(.spring()) { expand.toggle() }
+                })
+            )
+            .ignoresSafeArea()
+            .offset(y: expand ? 0 : -45)
+    }
+    
+    // Music Slider
+    private func updateValue(with gesture: DragGesture.Value, in geometry: GeometryProxy) {
+        let newValue = gesture.location.x / geometry.size.width
+        currentTime = min(max(Double(newValue), 0), 1)
     }
 }
 
