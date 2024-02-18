@@ -17,6 +17,8 @@ struct SearchView: View {
     
     @Binding var isKeyboardVisible: Bool
     
+    @Environment(\.colorScheme)  var colorScheme
+    
     var columns = [
         GridItem(.adaptive(minimum: 100)),
         GridItem(.adaptive(minimum: 100)),
@@ -54,15 +56,16 @@ struct SearchView: View {
                                     }
                                     .font(.system(size: 14))
                                     .padding(.bottom, 7)
+                                    .padding(.trailing, 20)
                                 }
                                 
                                 ForEach(searchHistoryStore.searchHistory) { historyItem in
                                     Button(action: {
                                         searchText = historyItem.searchTerm
                                     }) {
-                                        Image(systemName: "magnifyingglass").resizable().frame(width: 15, height: 15).foregroundStyle(.white)
+                                        Image(systemName: "magnifyingglass").resizable().frame(width: 15, height: 15).foregroundStyle(colorScheme == .dark ? .white : .black)
                                         Text(historyItem.searchTerm)
-                                            .foregroundStyle(.white)
+                                            .foregroundStyle(colorScheme == .dark ? .white : .black)
                                             .font(.system(size: 16))
                                             .padding()
                                             .background(Color.gray.opacity(0.2))
@@ -86,7 +89,6 @@ struct SearchView: View {
                                 searchHistoryStore.addToHistory(searchTerm: searchText)
                             }
                     }
-                    
                 }
                 
                 if !isKeyboardVisible  {
