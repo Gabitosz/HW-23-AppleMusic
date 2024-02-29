@@ -15,6 +15,7 @@ struct CategorySearchView: UIViewControllerRepresentable {
     }
     
     func makeUIViewController(context: Context) -> some UIViewController {
-        return CategorySearchViewController()
+        let navigationController = UINavigationController(rootViewController: CategorySearchViewController())
+        return navigationController
     }
 }
