@@ -53,7 +53,8 @@ struct TabBar: View {
                         Image(systemName: "dot.radiowaves.left.and.right")
                         Text("Радио")
                     }
-                SearchView(isKeyboardVisible: $isKeyboardVisible)
+                CategorySearchView()
+                //SearchView(isKeyboardVisible: $isKeyboardVisible)
                     .tag(2)
                     .tabItem {
                         Image(systemName: "magnifyingglass")
