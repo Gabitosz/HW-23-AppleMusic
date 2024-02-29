@@ -44,8 +44,7 @@ struct MiniPlayer: View {
                     .aspectRatio(contentMode: .fill)
                     .frame(width: expand ? height : 55, height: expand ? height : 55)
                     .cornerRadius(15)
-                
-                
+                   
                 if !expand {
                     Text("Rihanna - Diamonds")
                         .font(.title3)
