@@ -16,6 +16,7 @@
 		03022A5A2B7BE65100DFF86F /* SearchHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03022A592B7BE65100DFF86F /* SearchHistoryItem.swift */; };
 		03022A5F2B83DB2700DFF86F /* CategorySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03022A5E2B83DB2700DFF86F /* CategorySearchViewController.swift */; };
 		03022A622B83DEBD00DFF86F /* CategorySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03022A612B83DEBD00DFF86F /* CategorySearchView.swift */; };
+		03022A652B85176100DFF86F /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03022A642B85176100DFF86F /* CategoryCollectionViewCell.swift */; };
 		031A10242B5D7A3F0015E88C /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A10232B5D7A3F0015E88C /* LibraryView.swift */; };
 		031A10262B62D8920015E88C /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A10252B62D8920015E88C /* BlurView.swift */; };
 		031A10292B65418D0015E88C /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A10282B65418D0015E88C /* TabBar.swift */; };
@@ -26,6 +27,7 @@
 		0348E4C62B5C23C900855825 /* HW_23_AppleMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0348E4C52B5C23C900855825 /* HW_23_AppleMusicApp.swift */; };
 		0348E4CA2B5C23CA00855825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0348E4C92B5C23CA00855825 /* Assets.xcassets */; };
 		0348E4CD2B5C23CA00855825 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0348E4CC2B5C23CA00855825 /* Preview Assets.xcassets */; };
+		03D2FED82B9108D60010D0D2 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D2FED72B9108D60010D0D2 /* HeaderView.swift */; };
 		03F713222B6827900013F6EF /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F713212B6827900013F6EF /* RadioView.swift */; };
 		03F713242B682E6D0013F6EF /* RadioEdition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F713232B682E6D0013F6EF /* RadioEdition.swift */; };
 		03F713262B6838B30013F6EF /* RadioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F713252B6838B30013F6EF /* RadioCell.swift */; };
@@ -43,6 +45,7 @@
 		03022A592B7BE65100DFF86F /* SearchHistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryItem.swift; sourceTree = "<group>"; };
 		03022A5E2B83DB2700DFF86F /* CategorySearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySearchViewController.swift; sourceTree = "<group>"; };
 		03022A612B83DEBD00DFF86F /* CategorySearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySearchView.swift; sourceTree = "<group>"; };
+		03022A642B85176100DFF86F /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		031A10232B5D7A3F0015E88C /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		031A10252B62D8920015E88C /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		031A10282B65418D0015E88C /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 		0348E4C52B5C23C900855825 /* HW_23_AppleMusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW_23_AppleMusicApp.swift; sourceTree = "<group>"; };
 		0348E4C92B5C23CA00855825 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0348E4CC2B5C23CA00855825 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		03D2FED72B9108D60010D0D2 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		03F713212B6827900013F6EF /* RadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
 		03F713232B682E6D0013F6EF /* RadioEdition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioEdition.swift; sourceTree = "<group>"; };
 		03F713252B6838B30013F6EF /* RadioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioCell.swift; sourceTree = "<group>"; };
@@ -166,7 +170,9 @@
 		03022A5D2B83D9D800DFF86F /* UIKitViews */ = {
 			isa = PBXGroup;
 			children = (
+				03022A632B85173D00DFF86F /* Cells */,
 				03022A5E2B83DB2700DFF86F /* CategorySearchViewController.swift */,
+				03D2FED72B9108D60010D0D2 /* HeaderView.swift */,
 			);
 			path = UIKitViews;
 			sourceTree = "<group>";
@@ -177,6 +183,14 @@
 				03022A612B83DEBD00DFF86F /* CategorySearchView.swift */,
 			);
 			path = UIKitComponents;
+			sourceTree = "<group>";
+		};
+		03022A632B85173D00DFF86F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				03022A642B85176100DFF86F /* CategoryCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		031A101F2B5D733F0015E88C /* Sources */ = {
@@ -332,6 +346,7 @@
 				031A10262B62D8920015E88C /* BlurView.swift in Sources */,
 				03F7132C2B6975980013F6EF /* StationCell.swift in Sources */,
 				03022A4E2B72A29200DFF86F /* CategoryDetailView.swift in Sources */,
+				03D2FED82B9108D60010D0D2 /* HeaderView.swift in Sources */,
 				031A10242B5D7A3F0015E88C /* LibraryView.swift in Sources */,
 				03F713282B69718B0013F6EF /* Station.swift in Sources */,
 				031A102B2B6546480015E88C /* MiniPlayer.swift in Sources */,
@@ -341,6 +356,7 @@
 				031A102D2B6557E90015E88C /* CategoryListView.swift in Sources */,
 				03022A3E2B6F950100DFF86F /* SearchView.swift in Sources */,
 				03022A502B72A40800DFF86F /* CategoryDetailViewCell.swift in Sources */,
+				03022A652B85176100DFF86F /* CategoryCollectionViewCell.swift in Sources */,
 				03022A5F2B83DB2700DFF86F /* CategorySearchViewController.swift in Sources */,
 				031A10292B65418D0015E88C /* TabBar.swift in Sources */,
 				03022A522B77D96000DFF86F /* DetailPlaylist.swift in Sources */,
@@ -477,6 +493,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HW-23-AppleMusic/Preview Content\"";
@@ -492,8 +509,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gabrielzdravkovici.HW-23-AppleMusic";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gabrielzdravkovici.HW-23-AppleMusics";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -505,6 +523,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HW-23-AppleMusic/Preview Content\"";
@@ -520,8 +539,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gabrielzdravkovici.HW-23-AppleMusic";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gabrielzdravkovici.HW-23-AppleMusics";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
